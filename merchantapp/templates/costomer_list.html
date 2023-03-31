@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'admin_header.html' %}
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/merchanthome.css' %}">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<head>
+  <style>
+    table,th,td{
+    border :1px solid black;
+    }
+    thead{
+      padding: 10px;
+      margin-left: 50px;
+      margin-top: 100px;
+      text-transform: capitalize;
+    }
+    h4{
+      text-align: center;
+      margin-top: 50px;
+      text-decoration: underline;
+      text-decoration-color: #47AB11;
+    }
+  </style>
+</head>
+
+<div>
+  <div>
+    <h4>All Costomer Details </h4>
+  </div>
+  <table border="1" cellpadding="10px" cellspacing="10px" width="1400px">
+    <thead>
+    <td>Merchant Name: </td>
+    <td>Costomer Id: </td>
+    <td>adress</td>
+    <td>city</td>
+    <td>E-mail</td>
+    <td>Contact no</td>
+    <td>Username</td>
+    <td>Password</td>
+    <td>Delete</td>
+    </thead>
+    {% for x in objs %}
+  <tr>
+    <td>{{x.name}}</td>
+    <td>{{x.user_id}}</td>
+    <td>{{x.adress}}</td>
+    <td>{{x.city}}</td>
+    <td>{{x.email}}</td>
+    <td>{{x.phone}}</td>
+    <td>{{x.costomer_username}}</td>
+    <td>{{x.password}}</td>
+    <td><a href="{% url 'costomer_delete' x.pk %}" class="btn btn-primary">DELETE</a></td>
+  </tr>
+  {% endfor %}
+  </table>
+</div>
+{% endblock %}

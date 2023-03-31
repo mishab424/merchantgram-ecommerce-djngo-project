@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'admin_header.html' %}
+
+<div>
+    <h1>order sent successfully</h1>
+</div>
+<a href="{% url 'Costomer_home' %}">back to home</a>
+{% endblock %}

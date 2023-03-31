@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/merchanthome.css' %}">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+
+
+<div >
+  <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+      <div class="row">
+        <div class="col-sm-2">
+            <img src="{% static 'img/logo.jpg' %}">
+        </div>
+        <div class="col-sm-10">
+            <h1><font>MerchantGram.com</h1>
+          <h3>The online merchant store</h3>
+        </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="margin-top: -50px">
+        <ul class="navbar-nav" style="margin-left: 30px;">
+            <li class="nav-item " style="margin-left: 30px;">
+              <a class="nav-link text-success" href="{% url 'Costomer_home' %}" style="margin-left: 50px;"><i class="fa fa fw fa-home">HOME</i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-success" href="{% url 'Aboutas' %}" style="margin-left: 130px;">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-success" href="{% url 'Costomer_orders' %}"><i class="fa fa-shopping-cart"style="margin-left: 130px;">&nbsp My Order </i></a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link text-success" href="{% url 'costomer_profile_view' %}"><i class="fa fa fw fa-user"style="margin-left: 130px;">&nbspMy Account</i></a>
+            </li>
+          <li class="nav-item">
+               <a class="nav-link text-success" href="{% url 'Helpsend' %}"><i class="fa fa-question-circle" aria-hidden="true"style="margin-left: 130px;"></i>Help Care</i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-success" href="{% url 'LogoutCostomer' %}"><i class="fa fa-sign-out"style="margin-left: 130px;">&nbspLog Out</i></a>
+            </li>
+        </ul>
+</nav>
+<div>
+    <h2>Welcome {{username}}</h2>
+    <div >
+      <h6 style="margin-left:200px;margin-top: 50px;">you can buy products easily via Merchantgram</h6>
+    </div>
+</div>
+
+<div style="margin-top: 100px">
+    <nav class="navbar navbar-expand-sm bg-light navbar-dark">
+        <form class="form-inline" action="" method="get">
+            <input class="form-control mr-sm-2" type="text" name="qry" placeholder="product / city" style="margin-left: 50px">
+            <button class="btn btn-success" type="submit">Search</button>
+        </form>
+    </nav>
+</div>
+
+<div style="margin-top: 50px;margin-left: 50px" class="row">
+      {% for x in objs %}
+     <div class="col-lg-3 col-md-6 mb-4" style="max-height: 650px;max-width: 370px; margin-left: 60px;">
+          <div class="card " style="max-height: 650px;max-width: 350px">
+              <a href="">
+                <img class="card-img-top" src="{{x.image.url}}" alt="" style="height:300px;width:340px">
+              </a>
+              <div class="card-body">
+              <h4 class="card-title">Product :{{x.product_name}}</h4>
+              <p class="card-text">{{x.description}}  </p>
+                <h6>Deliver place: {{x.Delivery_place}}</h6>
+                  <h6>Price: {{x.price}}</h6>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-primary" role="button" href="{% url 'Product_merchant_Details' x.id %}" style="margin-left: 80px">VIEW DETAILS</a>
+            </div>
+          </div>
+  </div>
+    {% endfor %}
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/productcreate.css' %}">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<head>
+	<style>
+		#hide{
+			display: none;
+		}
+	</style>
+</head>
+
+<div>
+	<h2>Create your product</h2>
+</div>
+<div class="container" >
+	<form method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+
+		<div class="field" tabindex="1">
+
+				Product Name &nbsp&nbsp&nbsp&nbsp
+
+			{{form.product_name}}
+		</div>
+
+		<div class="field" tabindex="1">
+			<label for="username">
+				Image &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			</label>
+			{{form.image}}
+		</div>
+
+		<div class="field" tabindex="">
+			<label >
+				Delivery place
+			</label>
+			{{form.Delivery_place}}
+		</div>
+
+
+		<div class="field" tabindex="5" rowindex="3">
+			<label id="des">
+				Description &nbsp&nbsp&nbsp&nbsp
+			</label>
+			{{form.description}}
+		</div>
+		<div class="field" tabindex="">
+			<label>
+				Price &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			</label>
+			{{form.price}}
+		</div>
+		<div class="field" tabindex="" id="hide">
+			<label>
+				Username &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			</label>
+			{{form.username}}
+		</div>
+		<input type="submit" class="btn btn-primary" value="create">
+	</form>
+</div>
+
+{% endblock %}

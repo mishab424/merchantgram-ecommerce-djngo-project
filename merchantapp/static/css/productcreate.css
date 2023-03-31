@@ -1,0 +1,29 @@
+.container{
+    background-color: lightgray;
+    width: 100px
+    height: 100%;
+    justify-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    margin-left: 200px;
+}
+body{
+    background-color: lightgray;
+    width: 100%;
+    height: 100%;
+
+}
+h2{ margin-top: 50px;
+    text-align: center;
+    color: black;
+    -webkit-text-stroke: 1px white;
+    text-decoration: underline;
+    text-decoration-color: red;
+}
+.btn{
+    margin-top: 30px;
+    margin-left: 100px;
+}
+#des{
+    margin-top: 100px;
+}

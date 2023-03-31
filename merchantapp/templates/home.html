@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+      <div class="row">
+        <div class="col-sm-2">
+            <img src="{% static 'img/logo.jpg' %}">
+        </div>
+        <div class="col-sm-10">
+            <h1><font>MerchantGram.com</h1>
+          <h3>The online merchant store</h3>
+        </div>
+        </div>
+      </div>
+  </div>
+</div>
+<div id="back">
+    <div>
+        <a href="{% url 'merchantlogin' %}" class="btn btn-primary" id="st">MERCHANT LOGIN</a>
+    </div>
+    <div>
+        <a href="{% url 'CostomerLogin' %}" class="btn btn-primary" id="tr">USER LOGIN</a>
+    </div>
+    <div>
+        <a href="{% url 'admintLogin' %}" class="btn btn-primary" id="ur">ADMIN LOGIN</a>
+    </div>
+</div>
+{% endblock %}

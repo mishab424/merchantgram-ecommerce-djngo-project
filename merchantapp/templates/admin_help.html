@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'admin_header.html' %}
+
+<div>
+  <div class="row">
+    {% for x in q %}
+    <div class="col-sm-4">
+      <h4>Name :  {{x.name}}</h4>
+      <h6>Email : {{x.email}}</h6>
+      <p>Query : {{x.qry}}</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

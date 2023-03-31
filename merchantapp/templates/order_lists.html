@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'admin_header.html' %}
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/merchanthome.css' %}">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+<head>
+  <style>
+    table,th,td{
+    border :1px solid black;
+    }
+    table{
+      padding: 10px;
+      margin-left: 50px;
+      margin-top: 100px;
+      text-transform: capitalize;
+      text-align: center;
+    }
+    h4{
+      text-align: center;
+      margin-top: 50px;
+      text-decoration: underline;
+      text-decoration-color: #47AB11;
+    }
+    if x.status==true{
+      color: #47AB11;
+    }
+  </style>
+</head>
+
+<div>
+  <div>
+    <h4>Your order lists</h4>
+  </div>
+  <table border="1" cellpadding="10px" cellspacing="10px" width="1400px">
+    <thead>
+    <td>Product Name: </td>
+    <td>Merchant username</td>
+    <td>costomer_name</td>
+    <td>Merchant username</td>
+    <td>adress</td>
+    <td>city</td>
+    <td>pincode</td>
+    <td>Contact no</td>
+    <td>price</td>
+    <td>qty</td>
+    <td>Total Amount</td>
+    <td>Status</td>
+    </thead>
+    {% for x in objs %}
+  <tr>
+    <td>{{x.product_name}}</td>
+    <td>{{x.merchant_username}}</td>
+    <td>{{x.costomer_name}}</td>
+    <td>{{x.costomer_username}}</td>
+    <td>{{x.adress}}</td>
+    <td>{{x.city}}</td>
+    <td>{{x.pincode}}</td>
+    <td>{{x.phone}}</td>
+    <td>{{x.qty}}</td>
+    <td>{{x.price}}</td>
+    <td>{{x.total_amount}}</td>
+    <td>{{x.status}}</td>
+  </tr>
+  {% endfor %}
+  </table>
+</div>
+{% endblock %}

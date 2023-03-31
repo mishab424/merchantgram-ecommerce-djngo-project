@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'admin_header.html' %}
+
+<div style="margin-top: 50px;margin-left: 50px" class="row">
+      {% for x in objs %}
+     <div class="col-lg-3 col-md-6 mb-4" style="max-height: 800px;max-width: 370px; margin-left: 60px;">
+          <div class="card " style="max-height: 650px;max-width: 350px">
+              <a href="">
+                <img class="card-img-top" src="{{x.image.url}}" alt="" style="height:300px;width:340px">
+              </a>
+              <div class="card-body">
+              <h4 class="card-title" style="text-align:center" align="center">Product : {{x.product_name}}</h4>
+              <p class="card-text">{{x.description}}  </p>
+                <h6>Deliver place: {{x.Delivery_place}}</h6>
+                  <h6>Price: {{x.price}}</h6>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-primary" role="button" href="{% url 'admin_product_Details' x.id %}" style="margin-left: 80px">VIEW DETAILS</a>
+            </div>
+          </div>
+  </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

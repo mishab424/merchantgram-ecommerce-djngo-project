@@ -1,0 +1,37 @@
+.col-sm-10{
+    margin-left: 250px;
+    margin-top: -150px;
+}
+h1{
+    margin-left: 300px;
+    font-style: italic;
+    font-family: "OCR A Extended";
+ }
+h3{
+    margin-top: 25px;
+    margin-left: 400px;
+    color: red;
+    text-transform: capitalize;
+    font-style: oblique;
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+}
+h2{
+  margin-top: 100px;
+    margin-left: -300px;
+}
+h6{
+    margin-left: 50px;
+    margin-top: 50px;
+    font-family: "Cooper Black"
+}
+#wel{
+  border: none;
+  height: 300px;
+  width: 1100px;
+  margin-left: -3000px;
+}
+h2{
+  margin-left: 500px;
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */

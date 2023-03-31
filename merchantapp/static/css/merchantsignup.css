@@ -1,0 +1,23 @@
+#success_message{ display: none;}
+body{
+    background-color:lightgray;
+}
+form{
+      margin-left: 10%;
+      width: 900px;
+      border: #47AB11 2px solid;
+      padding-left: 30%;
+
+    }
+.form-group{
+      width: 1000px;
+    }
+h2{
+      margin-top: 25px;
+      margin-left: -300px;
+      text-decoration: underline;
+      text-decoration-color:  red;
+    }
+input{
+      width: 300px;
+    }

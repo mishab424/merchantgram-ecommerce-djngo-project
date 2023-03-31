@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/merchanthome.css' %}">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+
+
+<div >
+  <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+      <div class="row">
+        <div class="col-sm-2">
+            <img src="{% static 'img/logo.jpg' %}">
+        </div>
+        <div class="col-sm-10">
+            <h1><font>MerchantGram.com</h1>
+          <h3>The online merchant store</h3>
+        </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="margin-top: -50px">
+        <ul class="navbar-nav" style="margin-left: 30px;">
+            <li class="nav-item " style="margin-left: 30px;">
+              <a class="nav-link text-success" href="{% url 'Merchant_home' %}" style="margin-left: 50px;"><i class="fa fa fw fa-home">HOME</i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-success" href="{% url 'CreateProduct' %}" style="margin-left: 130px;"><i class="fa fa fw fa-plus"></i>Create product</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-success" href="{% url 'Merchant_orders' %}"><i class="fa fa-shopping-cart"style="margin-left: 130px;">&nbsp My Order </i></a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link text-success" href="{% url 'merchant_profile_view' %}"><i class="fa fa fw fa-user"style="margin-left: 130px;">&nbspMy Account</i></a>
+            </li>
+          <li class="nav-item">
+               <a class="nav-link text-success" href="{% url 'manage_order' %}"><i class="fa fa-wrench"style="margin-left: 130px;">Manage order</i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-success" href="{% url 'LogoutMerchant' %}"><i class="fa fa-sign-out"style="margin-left: 130px;">&nbspLog Out</i></a>
+            </li>
+        </ul>
+</nav>
+
+{% endblock %}

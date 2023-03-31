@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'costomer_header.html' %}
+
+<head>
+  <style>
+    p{
+      margin-top: 100px;
+      margin-left: 75px;
+      font-family: "monospace", monospace;
+      font-size: 14px;
+      font-style: italic;
+    }
+    h6{
+      margin-left: 150px;
+      margin-top: 50px;
+    }
+    span{
+      color: red;
+    }
+  </style>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/merchanthome.css' %}">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+<div>
+  <p>
+    An online merchant is a business that sells goods and processes payments over the Internet. <br>This ecommerce store transacts through a virtual terminal and payment gateway.<br> These merchants are similar to physical store merchants except that the point-of-sale and all business is conducted online
+  </p>
+  <h6 style="margin-left: 150px; margin-top: 100px;">
+    The &nbsp&nbsp&nbsp <span>Mrchantgram.com</span> &nbsp&nbspwill help you to buy & sell your product easily
+  </h6>
+</div>
+{% endblock %}
